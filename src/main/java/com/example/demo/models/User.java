@@ -1,5 +1,6 @@
 package com.example.demo.models;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,12 +16,15 @@ import javax.persistence.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(description = "사용자 ID")
     private Long id;
 
     @Column(nullable = false)
+    @Schema(description = "사용자 이름")
     private String name;
 
     @Column(nullable = false)
+    @Schema(description = "사용자 나이")
     private int age;
 
     @Builder
